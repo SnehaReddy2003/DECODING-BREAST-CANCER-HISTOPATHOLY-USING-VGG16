@@ -1,0 +1,98 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main container */
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    color: #007bff;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Instructions */
+p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* File input styling */
+input[type="file"] {
+    font-size: 1em;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+/* Submit button */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Prediction result styling */
+h2 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #28a745;
+}
+
+h2::before {
+    content: "Prediction: ";
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
