@@ -64,7 +64,7 @@ history = model.fit(
 )
 
 # Save the model
-model.save('breast_cancer_vgg16_model.h5')
+model.save('breast_cancer_vgg16_model.keras')
 
 # Plotting Accuracy and Loss
 plt.plot(history.history['accuracy'], label='accuracy')
@@ -94,3 +94,4 @@ plt.xlabel('Predicted')
 plt.ylabel('True')
 plt.title('Confusion Matrix')
 plt.show()
+
