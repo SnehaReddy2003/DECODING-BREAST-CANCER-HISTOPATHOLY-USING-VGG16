@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breast Cancer Prediction</title>
+    <title>Breast Cancer Detection</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -12,15 +12,40 @@
         <p>Upload an image of a breast tissue slide to predict whether it is benign or malignant.</p>
 
         <!-- Form to upload image -->
-        <form action="C:\Users\SNEHA\OneDrive\Desktop\Project1\breast\benign\SOB\adenosis\SOB_B_A_14-22549AB\100X\asd.png" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" accept="image/*" required>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required onchange="previewImage(event)">
             <button type="submit">Predict</button>
         </form>
 
+        <!-- Image preview -->
+        <div id="imagePreviewContainer" style="margin-top: 20px;">
+            <img id="imagePreview" alt="Selected image preview will appear here" style="max-width: 100%; height: auto; display: none;">
+        </div>
+
         <!-- Display result if available -->
         {% if result %}
-            <h2>Prediction: {{ result }}</h2>
+            <h2> {{ result }}</h2>
         {% endif %}
     </div>
+
+    <script>
+        function previewImage(event) {
+            const imagePreview = document.getElementById('imagePreview');
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.style.display = 'none';
+                imagePreview.src = '';
+            }
+        }
+    </script>
 </body>
 </html>
+
