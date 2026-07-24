@@ -1,4 +1,4 @@
-# DECODING-BREAST-CANCER-HISTOPATHOLY-USING-VGG16
+# DECODING-BREAST-CANCER-HISTOPATHOLOGY-USING-VGG16
 Analyzing histopathalogy images for breast cancer detection using VGG16 deep learning model it classifies benign and malignant tissues 
  Download Trained Model
 Since the trained model file is 130MB, it is stored on Google Drive.
